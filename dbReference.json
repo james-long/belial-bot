@@ -1,0 +1,92 @@
+// Database name: cf_units
+{
+  "units" :
+  {
+    "UnitID" : "int NOT NULL",
+    "UnitName" : "VARCHAR(255) CHARACTER SET utf8 NOT NULL",
+    "UnitImageLink" : "VARCHAR(255)",
+    "UnitRarity" : "int",
+    "UnitCost" : "int",
+    "UnitElement" : "VARCHAR(10)",
+    "UnitType" : "VARCHAR(255)",
+    "UnitTribe" : "VARCHAR(255)",
+    "UnitSellPrice" : "int",
+    "PRIMARY KEY" : "UnitID"
+  },
+
+  "base_stats" : {
+    "UnitID": "int NOT NULL",
+    "BaseLevel": "int",
+    "HP": "int",
+    "ATK": "int",
+    "REC": "int",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "max_stats" : {
+    "UnitID" : "int NOT NULL",
+    "MaxLevel" : "int",
+    "HP" : "int",
+    "ATK" : "int",
+    "REC" : "int",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "skills" : {
+    "UnitID" : "int NOT NULL",
+    "SkillName" : "VARCHAR(255) CHARACTER SET utf8",
+    "SkillDescription" : "VARCHAR(2083)",
+    "SkillBaseCD" : "int",
+    "SkillFinalCD" : "int",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "cskills" : {
+    "UnitID" : "int NOT NULL",
+    "CSkillName" : "VARCHAR(255) CHARACTER SET utf8",
+    "CSkillDescription" : "VARCHAR(2083)",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "ability_1" : {
+    "UnitID" : "int NOT NULL",
+    "AbilityName" : "VARCHAR(255)",
+    "AbilityType" : "VARCHAR(255)",
+    "AbilityDescription" : "VARCHAR(2083)",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "ability_2" : {
+    "UnitID" : "int NOT NULL",
+    "AbilityName" : "VARCHAR(255)",
+    "AbilityType" : "VARCHAR(255)",
+    "AbilityDescription" : "VARCHAR(2083)",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "ability_3" : {
+    "UnitID" : "int NOT NULL",
+    "AbilityName" : "VARCHAR(255)",
+    "AbilityType" : "VARCHAR(255)",
+    "AbilityDescription" : "VARCHAR(2083)",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "ability_4" : {
+    "UnitID" : "int NOT NULL",
+    "AbilityName" : "VARCHAR(255)",
+    "AbilityType" : "VARCHAR(255)",
+    "AbilityDescription" : "VARCHAR(2083)",
+    "PRIMARY KEY": "UnitID"
+  },
+
+  "ability_5" : {
+    "UnitID" : "int NOT NULL",
+    "AbilityName" : "VARCHAR(255)",
+    "AbilityType" : "VARCHAR(255)",
+    "AbilityDescription" : "VARCHAR(2083)",
+    "PRIMARY KEY": "UnitID"
+  }
+}
+
+

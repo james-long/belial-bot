@@ -1,0 +1,20 @@
+{
+  "name": "belial-bot",
+  "version": "1.0.0",
+  "description": "Crash Fever unit database search bot",
+  "main": "belial-bot.js",
+  "engines": {
+    "node": "9.2.0",
+    "npm": "5.5.1"
+  },
+  "scripts": {
+    "start": "node belial-bot.js"
+  },
+  "author": "Amp",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "mysql": "^2.15.0",
+    "mysql-promise": "^4.1.0"
+  }
+}
