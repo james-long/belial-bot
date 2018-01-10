@@ -1,0 +1,7 @@
+{
+  "token": "DISCORD BOT TOKEN GOES HERE",
+  "mysqlHost": "MySQL Host",
+  "mysqlUser": "MySQL Username",
+  "mysqlPass": "MySQL Password",
+  "mysqlDB": "MySQL Database Name"
+}
