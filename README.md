@@ -16,6 +16,6 @@ Belial Bot is currently a work in progress, and has a few unchecked cases left t
 `!startquery` - Starts an interactive query builder that allows users to traverse the database and set up restrictions to perform a refined search with.
 
 ## Dependencies
-Belial Bot has dependencies on `discord.js` and `mysql`. It also uses `mysql-promise` to perform Promise-based async calls to the databse.
+Belial Bot has dependencies on `discord.js` and `mysql`. It also uses `mysql-promise` to perform Promise-based async calls to the database.
 
 Furthermore, Belial Bot currently scrapes unit information from the unofficial [Crash Fever Wiki](https://cf-wiki.info/). It is stored in a database with structure shown in `dbReference.json`, which is accessed with credentials that should be in a file `auth.json`. A template file `authtemplate.json` is provided.
