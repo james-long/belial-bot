@@ -60,4 +60,7 @@ typings/
 # next.js build output
 .next
 
+.lnk
+
+# data specific to users
 auth.json
