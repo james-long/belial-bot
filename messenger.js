@@ -4,14 +4,14 @@ const Discord = require('discord.js');
 exports.processResults = function(messageChannel, unitInfo){
     let numResults = unitInfo.units.length; // Number of results that were found in unitInfo
     console.log("This query returned " + numResults + " result(s).\n")
-    if(numResults == 0){
+    if(numResults === 0){
         messageChannel.send("No units were found under those conditions.");
     }
 
-    else if(numResults == 1){ // Reduce each one-element array of units and output
+    else if(numResults === 1){ // Reduce each one-element array of units and output
         for(let table in unitInfo){
             if(unitInfo.hasOwnProperty(table)){
-                if(unitInfo[table].length == 0) {
+                if(unitInfo[table].length === 0) {
                     unitInfo[table] = undefined;
                     // We define no info as undefined
                 }
