@@ -31,11 +31,13 @@ bot.on('message', message => {
         let data = rawtext.join(" ");
 
         if(command === "unitid") { // Query by unit ID
+            console.log("User called !unitid on " + data);
             SQLQuery.getUnitByID(data) // We output immediately once an ID is found
                 .then(result => Messenger.processResults(message.channel, result))
                 .catch(err => console.log(err));
         }
         else if(command === "unitname") { //Supply the IN condition for UnitID
+            console.log("User called !unitname on " + data);
             SQLQuery.getUnitByQuery(" WHERE UnitID IN " +
                 "(SELECT UnitID FROM units WHERE UnitName LIKE \"%" + data + "%\")")
                 .then(result => Messenger.processResults(message.channel, result))

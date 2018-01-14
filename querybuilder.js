@@ -108,6 +108,8 @@ exports.startGeneralCollector = function(message, collectedInfo){
                     parseCond(final.Restriction) + ")";
             }
 
+            console.log("User queried SELECT * FROM [database]" + query);
+
             // Output the results to Discord
             SQLQuery.getUnitByQuery(query)
                 .then(result => Messenger.processResults(message.channel, result))
@@ -173,7 +175,7 @@ function startOuterAddCollector(message, collectedInfo){
     let currentMessage = message.channel.send("Creating new restriction.\n" +
         "Please input the number of the table you would like to create the restriction in:" +
         "```\n" +
-        "0 - General Unit Data (stats, etc.)\n" +
+        "0 - General Unit Data (rarity, etc.)\n" +
         "1 - Unit Base Stats\n" +
         "2 - Unit Max Stats\n" +
         "3 - Unit Skills\n" +
