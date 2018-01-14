@@ -44,8 +44,15 @@ bot.on('message', message => {
                 .catch(err => console.log(err));
         }
         else if(command === "startquery") { // Helps the user construct an SQL query
-            let allRestrictions = [];
-            QueryBuilder.startGeneralCollector(message, allRestrictions);
+            // Ensure only one query at a time
+            if(QueryBuilder.queryOngoing){
+                message.channel.send("Cannot start another query while one is already running!");
+            }
+            else{
+                let allRestrictions = [];
+                QueryBuilder.queryOngoing = true;
+                QueryBuilder.startGeneralCollector(message, allRestrictions);
+            }
         }
     }
 });

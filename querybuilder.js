@@ -5,6 +5,8 @@ const SQLQuery = require('./sqlquery.js');
 
 const timeToWait = 30000;
 
+exports.queryOngoing = false;
+
 // Start the custom SQL query by asking for user input (top-level menu)
 exports.startGeneralCollector = function(message, collectedInfo){
 
@@ -114,16 +116,20 @@ exports.startGeneralCollector = function(message, collectedInfo){
             SQLQuery.getUnitByQuery(query)
                 .then(result => Messenger.processResults(message.channel, result))
                 .catch(err => console.log(err));
+
+            exports.queryOngoing = false;
         }
 
         else if(reason === "cancel"){ // Clean up and then output end reason
             queryMessage.then(msg => {return msg.delete();}).catch(err => console.log(err));
             message.channel.send("The query builder has been cancelled.");
+            exports.queryOngoing = false;
         }
 
         else if(reason === "time"){ // Clean up and then output end reason
             queryMessage.then(msg => {return msg.delete();}).catch(err => console.log(err));
             message.channel.send("The query builder has timed out.");
+            exports.queryOngoing = false;
         }
     });
 };
