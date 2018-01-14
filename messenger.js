@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 // Processes unitInfo and chooses the right method based on how many results there are
 exports.processResults = function(messageChannel, unitInfo){
     let numResults = unitInfo.units.length; // Number of results that were found in unitInfo
-    console.log("This query returned " + numResults + " results.\n")
+    console.log("This query returned " + numResults + " result(s).\n")
     if(numResults == 0){
         messageChannel.send("No units were found under those conditions.");
     }
