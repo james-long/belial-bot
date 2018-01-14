@@ -8,6 +8,15 @@ This project is a Discord unit lookup bot written in Node.js. It has access to a
 
 Belial Bot is currently a work in progress, and has a few unchecked cases left to cover and features to implement before he will be ready for public use.
 
+## Usage
+To initialize the bot, you will need to create a MySQL database with the relevant data. 
+
+In the `init` folder, there are three scripts you should modify with the relevant credentials and then run in the order `initdb-cf-units.sql` > `wikiScrape.py` > `accessDB.py`. This will create the database and fill it with data.
+
+After, you will need to connect the bot to the relevant database. This can be done by modifying the `authtemplate.json` file and renaming to `auth.json`.
+
+After that, running the included batch file `run-belial-bot.bat` should be enough to get the bot up and running!
+
 ## Commands
 `!unitid <id>` - Searches for units with ID equal to `id` and brings up an embed of general information about the unit, if available.
 
@@ -22,4 +31,4 @@ Belial Bot is currently a work in progress, and has a few unchecked cases left t
 ## Dependencies
 Belial Bot has dependencies on `discord.js` and `mysql`. It also uses `mysql-promise` to perform Promise-based async calls to the database.
 
-Furthermore, Belial Bot currently scrapes unit information from the unofficial [Crash Fever Wiki](https://cf-wiki.info/). It is stored in a database with structure shown in `dbReference.json`, which is accessed with credentials that should be in a file `auth.json`. A template file `authtemplate.json` is provided.
+Furthermore, Belial Bot currently scrapes unit information from the unofficial [Crash Fever Wiki](https://cf-wiki.info/). It is stored in a database with structure shown in `dbReference.json`.
