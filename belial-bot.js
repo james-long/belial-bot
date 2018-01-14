@@ -13,7 +13,7 @@ const bot = new Discord.Client();
 bot.login(auth.token).catch(err => console.log("There was an error in login: " + err));
 
 // Event occurring when the bot is connected
-bot.on("ready", () => console.log("Successfully connected to Discord."));
+bot.on("ready", () => console.log("Successfully connected to Discord.\n"));
 
 // Event occurring when the bot detects a message
 bot.on('message', message => {
