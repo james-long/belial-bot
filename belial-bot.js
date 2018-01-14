@@ -6,11 +6,6 @@ const QueryBuilder = require('./querybuilder.js');
 
 SQLQuery.verifyConnection();
 
-/* IMPORTANT NOTE
-                ABILITY SEARCH SHOULD BE A SINGLE OPTION
-                OPTIONS THAT CAN BE CANCELLED SHOULD INDICATE THAT
-             */
-
 // New instance of Discord client
 const bot = new Discord.Client();
 
@@ -49,20 +44,6 @@ bot.on('message', message => {
         else if(command === "startquery") { // Helps the user construct an SQL query
             let allRestrictions = [];
             QueryBuilder.startGeneralCollector(message, allRestrictions);
-        }
-        else if(command === "test") { // Testing message edit options
-            let msgPromise = message.channel.send("Try saying 'test' again!");
-            let collector = new Discord.MessageCollector(message.channel, msg => {
-                return msg.author.id === message.author.id;
-            }, { time : 10000 });
-            collector.on('collect', message => {
-                if(message.content === "test") {
-                    msgPromise.then(msg => {
-                        message.channel.send("Good as new!");
-                        return msg.delete();
-                    }).catch(err => console.log(err));
-                }
-            });
         }
     }
 });
